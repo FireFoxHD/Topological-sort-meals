@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="app.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.20.0/cytoscape.min.js"></script>
+    <title>Document</title>
+  </head>
+
+
+  <body>
+    <div id="navbar">
+      <h1 class="title"> Cook, Eat and Enjoy Your Food in Your Order </h1>
+      <div>
+        <div class="eventButtons">
+          <button id="change-view">List view</button>
+          <button id="sortList">Sort</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="alert" class="alert">
+      <span id="notif-icon"class="fas"></span>
+      <span id="notif-msg"></span>
+      <div id="close-alert" class="close-btn">
+         <span class="fas fa-times"></span>
+      </div>
+   </div>
+    
+    <form class="mealInputContainer">
+      <div class="addMeal">
+        <div>
+          <label for="new-meal" class="mealInputLabel">Dish</label><br/>
+          <input id="new-meal" class="mealInput" type="text" autocomplete="off" placeholder="name" />
+        </div>
+
+        <div>
+            <label for="new-mealDuration" class="mealInputLabel">Duration</label><br/>
+            <input id="new-mealDuration" class="mealInput"type="number" min="0" max="9999" autocomplete="off" placeholder="Minutes"/>
+        </div>
+
+        <button id="addMealbtn">Add Dish</button>      
+      </div>  
+      
+      <div class="addConnection">
+        <div>
+          <label for="sourceNode" class="sourceNodeLabel">Source</label><br/>
+          <input id="sourceNode" class="source" type="text" autocomplete="off" placeholder="Predecessor"/>
+        </div>
+
+        <div>
+            <label for="targetNode" class="targetNodeLabel">Target</label><br/>
+            <input id="targetNode" class="target" type="text" autocomplete="off" placeholder="Successor"/>
+        </div>
+
+        <button id="addConnectionbtn">Add Connection</button>  
+      </div> 
+
+    </form>
+    
+    <h1 id="viewLabel">
+
+    </h1>
+
+    <div id="list-view" class="view">
+        <ul id="mealList">
+        </ul>
+    </div>   
+
+    <div id="graph-view" class="view graph-view">
+        <div id="graph">
+
+        </div>
+        <div class="graph-actions">
+          <button id="recenterView">Center view</button>
+          <button id="download-graph" class="download">Download graph</button>
+        </div>
+        
+    </div>
+
+    </div>
+
+    <div id="sort-view" class="view hide">
+      
+    </div>
+
+    <script type="module"src="graph.js" ></script>
+    <script type="module"src="topologicalSort.js"></script>
+    <script type="module" src="app.js" defer></script>
+  </body>
+</html>

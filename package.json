@@ -1,0 +1,12 @@
+{
+  "name": "project-management",
+  "version": "1.0.0",
+  "description": "",
+  "main": "topologicalSort.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node topologicalSort.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
